@@ -6,7 +6,7 @@ sys.path.insert(0, '/usr/lib/chromium-browser/chromedriver')
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-
+from selenium.webdriver.common.action_chains import ActionChains
 
 
  
@@ -71,20 +71,35 @@ class clssAccessWebsite():
        
     def action_export_leainq(self, url):
      
-       
-       self.driver.get(url)
-       time.sleep(3)
+       time.sleep(5) # Sleep for 3 seconds
+       self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
        self.driver.find_element_by_xpath('//a[contains(@href, "/ESS/ELeave/eLeaveApplicationInquiry.aspx")]').click()
-    
-       idtext=self.driver.find_element_by_id("token-input-ctl00_ContentHolder_aceSearchEmployeeID")
-       idtext.clear()
+       time.sleep(3)
 
+       idtext=self.driver.find_element_by_id("BtnEmpSetup_ctl00_ContentHolder_aceSearchEmployeeID")
+       action = ActionChains(self.driver)    
+       action.double_click(idtext).perform()
+
+       time.sleep(1)
        self.driver.find_element_by_xpath('//*[@id="ctl00_ContentHolder_btnGetPop"]/a/table/tbody/tr/td[2]').click()
-        
-       time.sleep(30)
-       
+       time.sleep(10)
+
        self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]').click()
        time.sleep(5)
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
        
        
 def prepare_leaveadjust(filename):
