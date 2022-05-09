@@ -70,11 +70,11 @@ class clssAccessWebsite():
 
        
     def action_export_leainq(self):
-       time.sleep(2)
-       self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_WM")]').click()
-       time.sleep(4)
+       time.sleep(3)
+       self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
+       time.sleep(1)
        self.driver.find_element_by_xpath('//a[contains(@href, "/ESS/ELeave/eLeaveApplicationInquiry.aspx")]').click()
-       
+    
        idtext=self.driver.find_element_by_id("token-input-ctl00_ContentHolder_aceSearchEmployeeID")
        idtext.clear()
 
