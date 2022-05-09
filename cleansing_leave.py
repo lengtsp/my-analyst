@@ -75,21 +75,21 @@ def prepare_leaveadjust(filename):
     df['leave_type_k'] = 0
     df['leave_type_k'] = df['Leave Type'].apply(convert_leavetype)
     df = df[ (df['emplid'].str[:1] != 'K')] 
-    df['emplid'] = df['emplid'].astype(int)
+    df['emplid'] = df['emplid'].astype(str)
     return df
 
 def prepare_empProfile(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
     df = df[ (df['emplid'].str[:1] != 'K')] 
-    df['emplid'] = df['emplid'].astype(int)
+    df['emplid'] = df['emplid'].astype(str)
     return df
    
 def prepare_movement(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
     df = df[ (df['emplid'].str[:1] != 'K')] 
-    df['emplid'] = df['emplid'].astype(int)
+    df['emplid'] = df['emplid'].astype(str)
     return df
    
    
