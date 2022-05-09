@@ -49,8 +49,8 @@ def convert_leavetype(ty):
         return 'N/A'
 
     
-class clssAccessWebsite(my_url):
-    base_url= my_url
+class clssAccessWebsite():
+#     base_url= my_url
 
     def setUp(self):
         options = webdriver.ChromeOptions()
@@ -59,10 +59,11 @@ class clssAccessWebsite(my_url):
         self.driver = webdriver.Chrome('chromedriver', chrome_options = options)
         self.driver.implicitly_wait(4)
 
-    def load_home_page(self):
+    def load_home_page(self, base_url):
         driver = self.driver
-        driver.get(self.base_url)
-
+#         driver.get(self.base_url)
+        driver.get(base_url)
+        
     def action_login(self):
         iduser=self.driver.find_element_by_id("ctl00_ContentHolder_user")
         iduser.clear()
