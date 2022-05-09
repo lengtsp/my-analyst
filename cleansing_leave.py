@@ -81,7 +81,7 @@ class clssAccessWebsite():
  
        self.driver.get(url)
 
-       time.sleep(3)
+       time.sleep(10)
        idtext=self.driver.find_element_by_id("BtnEmpSetup_ctl00_ContentHolder_aceSearchEmployeeID")
        print(4)
        action = ActionChains(self.driver)    
