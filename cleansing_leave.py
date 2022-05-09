@@ -74,8 +74,8 @@ class clssAccessWebsite():
        self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_WM")]').click()
        self.driver.find_element_by_xpath('//a[contains(@href, "/ESS/ELeave/eLeaveApplicationInquiry.aspx")]').click()
        
-        idtext=self.driver.find_element_by_id("token-input-ctl00_ContentHolder_aceSearchEmployeeID")
-        idtext.clear()
+       idtext=self.driver.find_element_by_id("token-input-ctl00_ContentHolder_aceSearchEmployeeID")
+       idtext.clear()
 
        self.driver.find_element_by_xpath('//*[@id="ctl00_ContentHolder_btnGetPop"]/a/table/tbody/tr/td[2]').click()
         
