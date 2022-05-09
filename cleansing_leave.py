@@ -80,6 +80,13 @@ def prepare_empProfile(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
     return df
+   
+def prepare_movement(filename):
+    df            = pd.read_excel(filename)
+    df            = df.rename(columns={df.columns[0] : 'emplid'}      )
+    return df
+   
+   
 
 def convert_leavetype(ty):
     if ty == 'ANL1':
