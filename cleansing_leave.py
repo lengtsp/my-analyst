@@ -1,8 +1,8 @@
 def prepare_leaveadjust(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'EMPLID'}      )
-    df['leave_type_ktb'] = 0
-    df['leave_type_ktb'] = df['Leave Type'].apply(convert_leavetype)
+    df['leave_type_k'] = 0
+    df['leave_type_k'] = df['Leave Type'].apply(convert_leavetype)
     return df
 
 
