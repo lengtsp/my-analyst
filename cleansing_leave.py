@@ -90,7 +90,7 @@ class clssAccessWebsite():
        time.sleep(10)
 
        print(7)
-       self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]').click()
+       driver.find_element_by_class_name("ZG_TExportExcel")
        time.sleep(5)
        
        
