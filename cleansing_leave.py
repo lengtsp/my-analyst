@@ -1,5 +1,73 @@
 import pandas as pd
 
+!pip list | grep selenium --quiet
+
+!pip install selenium --quiet
+!apt-get update
+!apt install chromium-chromedriver
+!cp /usr/lib/chromium-browser/chromedriver /usr/bin/
+import sys
+sys.path.insert(0, '/usr/lib/chromium-browser/chromedriver')
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+
+
+ 
+class clssAccessWebsite():
+#     base_url= my_url
+
+
+    def setUp(self):
+        options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        self.driver = webdriver.Chrome('chromedriver', chrome_options = options)
+        self.driver.implicitly_wait(4)
+
+    def load_home_page(self, base_url):
+        driver = self.driver
+#         driver.get(self.base_url)
+        driver.get(base_url)
+        
+    def action_login(self):
+        iduser=self.driver.find_element_by_id("ctl00_ContentHolder_user")
+        iduser.clear()
+        iduser.send_keys(user_login)
+
+        idpass=self.driver.find_element_by_id("ctl00_ContentHolder_pwdbox")
+        idpass.clear()
+        idpass.send_keys(pass_login)
+
+        id_submit=self.driver.find_element_by_class_name("LoginLink")
+        id_submit.send_keys(Keys.RETURN)
+
+    def action_export_leaveadjustment(self):
+        time.sleep(5) # Sleep for 3 seconds
+        self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
+        self.driver.find_element_by_xpath('//a[contains(@href, "/HRM/Leave/eLeaveBulkAdjustment.aspx")]').click()
+
+        time.sleep(5) # Sleep for 3 seconds
+        self.driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Get" ]').click()
+        #สั่ง download file มันจะมาลง colab ให้เลย
+
+        time.sleep(2) # Sleep for 3 seconds
+        self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]').click()
+        time.sleep(5)
+
+
+    def action_export_empProfile(self):
+        time.sleep(2)
+        self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_WM")]').click()
+        self.driver.find_element_by_xpath('//a[contains(@href, "/Routing/eEmployeeProfile.aspx")]').click()
+        # self.driver.find_element_by_xpath('//div[contains(@class, "x8Hbtn")]').click()
+        self.driver.find_element_by_xpath('//div[contains(@class, "x8Exportbtn")]').click()
+        time.sleep(5)
+
+
+
+
 def prepare_leaveadjust(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
