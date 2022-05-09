@@ -86,11 +86,11 @@ class clssAccessWebsite():
 
        time.sleep(5)
        print(6)
-       self.driver.find_element_by_id("ctl00_ContentHolder_btnGetPop")
+       self.driver.find_element_by_id("ctl00_ContentHolder_btnGetPop").click()
        time.sleep(10)
 
        print(7)
-       self.driver.find_element_by_class_name("ZG_TExportExcel")
+       self.driver.find_element_by_class_name("ZG_TExportExcel").click()
        time.sleep(5)
        
        
