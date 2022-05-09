@@ -1,11 +1,16 @@
 def prepare_leaveadjust(filename):
     import pandas as pd
     df            = pd.read_excel(filename)
-    df            = df.rename(columns={df.columns[0] : 'EMPLID'}      )
+    df            = df.rename(columns={df.columns[0] : 'emplid'}      )
     df['leave_type_k'] = 0
     df['leave_type_k'] = df['Leave Type'].apply(convert_leavetype)
     return df
 
+def prepare_empProfile(filename):
+    import pandas as pd
+    df            = pd.read_excel(filename)
+    df            = df.rename(columns={df.columns[0] : 'emplid'}      )
+    return df
 
 def convert_leavetype(ty):
     if ty == 'ANL1':
