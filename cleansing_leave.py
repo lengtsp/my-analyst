@@ -99,7 +99,7 @@ class clssAccessWebsite():
 #        time.sleep(10)
 
 
-       button1 = driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Get" ]')
+       button1 = self.driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Get" ]')
        self.driver.execute_script("arguments[0].click();", button1)
   
        time.sleep(70)
