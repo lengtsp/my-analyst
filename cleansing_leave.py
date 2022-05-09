@@ -52,6 +52,19 @@ def convert_leavetype(ty):
 class clssAccessWebsite():
 #     base_url= my_url
 
+    !pip list | grep selenium --quiet
+
+    !pip install selenium --quiet
+    !apt-get update
+    !apt install chromium-chromedriver
+    !cp /usr/lib/chromium-browser/chromedriver /usr/bin/
+    import sys
+    sys.path.insert(0, '/usr/lib/chromium-browser/chromedriver')
+
+    from selenium import webdriver
+    from selenium.webdriver.common.keys import Keys
+
+
     def setUp(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
