@@ -1,3 +1,10 @@
+def prepare_leaveadjust(df):
+    df            = pd.read_excel(filename_hmc_leaveadjust)
+    df            = df.rename(columns={df.columns[0] : 'EMPLID'}      )
+    df['leave_type_ktb'] = 0
+    df['leave_type_ktb'] = df['Leave Type'].apply(convert_leavetype)
+
+
 def convert_leavetype(ty):
     if ty == 'ANL1':
         return 8
