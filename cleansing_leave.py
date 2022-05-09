@@ -1,4 +1,5 @@
 import pandas as pd
+import time
 
 import sys
 sys.path.insert(0, '/usr/lib/chromium-browser/chromedriver')
