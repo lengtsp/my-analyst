@@ -69,25 +69,28 @@ class clssAccessWebsite():
        time.sleep(5)
 
        
-    def action_export_leainq(self):
-       print(1)
-       time.sleep(3) # Sleep for 3 seconds
-       self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
-       print(2)
-       self.driver.find_element_by_xpath('//a[contains(@href, "/ESS/ELeave/eLeaveApplicationInquiry.aspx")]').click()
-       time.sleep(3)
-       print(3)
+    def action_export_leainq(self, url):
+#        print(1)
+#        time.sleep(3) # Sleep for 3 seconds
+#        self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
+#        print(2)
+#        self.driver.find_element_by_xpath('//a[contains(@href, "/ESS/ELeave/eLeaveApplicationInquiry.aspx")]').click()
+#        time.sleep(3)
+#        print(3)
        
+ 
+       self.driver.get(url)
+
+       time.sleep(3)
        idtext=self.driver.find_element_by_id("BtnEmpSetup_ctl00_ContentHolder_aceSearchEmployeeID")
        print(4)
        action = ActionChains(self.driver)    
        print(5)
        action.double_click(idtext).perform()
 
-       time.sleep(20)
+       time.sleep(3)
        print(6)
-# #        self.driver.find_element_by_id("ctl00_ContentHolder_btnGetPop").click()
-#        self.driver.find_element_by_xpath('/html/body/form/div[5]/div[2]/div[1]/table/tbody/tr[2]/td/div/div[2]/div[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr/td/span[1]/a/table/tbody/tr/td[2]').click()
+
        self.driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Get" ]').click()
   
        time.sleep(10)
