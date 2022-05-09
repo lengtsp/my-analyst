@@ -1,5 +1,6 @@
+import pandas as pd
+
 def prepare_leaveadjust(filename):
-    import pandas as pd
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
     df['leave_type_k'] = 0
@@ -7,7 +8,6 @@ def prepare_leaveadjust(filename):
     return df
 
 def prepare_empProfile(filename):
-    import pandas as pd
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
     return df
