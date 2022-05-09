@@ -86,15 +86,17 @@ class clssAccessWebsite():
 
        time.sleep(5)
        print(6)
-       self.driver.find_element_by_id("ctl00_ContentHolder_btnGetPop").click()
-       self.driver.find_element_by_xpath('/html/body/form/div[5]/div[2]/div[1]/table/tbody/tr[2]/td/div/div[2]/div[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr/td/span[1]/a/table/tbody/tr/td[2]').click()
+# #        self.driver.find_element_by_id("ctl00_ContentHolder_btnGetPop").click()
+#        self.driver.find_element_by_xpath('/html/body/form/div[5]/div[2]/div[1]/table/tbody/tr[2]/td/div/div[2]/div[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr/td/span[1]/a/table/tbody/tr/td[2]').click()
+       self.driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Get" ]').click()
+  
        time.sleep(10)
 
        
        
        
        print(7)
-       self.driver.find_element_by_class_name("ZG_TExportExcel").click()
+       self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]').click()
        time.sleep(5)
        
        
