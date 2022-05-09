@@ -25,7 +25,7 @@ class clssAccessWebsite():
 #         driver.get(self.base_url)
         driver.get(base_url)
         
-    def action_login(self):
+    def action_login(self, user_login. pass_login):
         iduser=self.driver.find_element_by_id("ctl00_ContentHolder_user")
         iduser.clear()
         iduser.send_keys(user_login)
