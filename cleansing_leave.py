@@ -52,7 +52,11 @@ def convert_leavetype(ty):
 class clssAccessWebsite():
 #     base_url= my_url
 
-
+    apt-get update
+    apt install chromium-chromedriver
+    cp /usr/lib/chromium-browser/chromedriver /usr/bin/
+    import sys
+    sys.path.insert(0, '/usr/lib/chromium-browser/chromedriver')
 
     from selenium import webdriver
     from selenium.webdriver.common.keys import Keys
