@@ -86,7 +86,7 @@ class clssAccessWebsite():
 
        time.sleep(5)
        print(6)
-       self.driver.find_element_by_xpath('//*[@id="ctl00_ContentHolder_btnGetPop"]/a/table/tbody/tr/td[2]').click()
+       self.driver.find_element_by_id("ctl00_ContentHolder_btnGetPop")
        time.sleep(10)
 
        print(7)
