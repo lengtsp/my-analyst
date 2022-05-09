@@ -90,13 +90,13 @@ class clssAccessWebsite():
        print(6)
 
 #        self.driver.find_element_by_xpath('//*[@id="ctl00_ContentHolder_btnGetPop"]/a').click()
-       idtext2=self.driver.find_element_by_id('//*[@id="ctl00_ContentHolder_btnGetPop"]/a')
-       print(61)
-       action = ActionChains(self.driver)    
-       print(62)
-       action.double_click(idtext2).perform()
+# #        idtext2=self.driver.find_element_by_id('//*[@id="ctl00_ContentHolder_btnGetPop"]/a')
+# #        print(61)
+# #        action = ActionChains(self.driver)    
+# #        print(62)
+# #        action.double_click(idtext2).perform()
        
-       time.sleep(10)
+#        time.sleep(10)
 
 
        print(7)
