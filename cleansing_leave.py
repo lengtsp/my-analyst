@@ -69,9 +69,9 @@ class clssAccessWebsite():
        time.sleep(5)
 
        
-    def action_export_leainq(self, url):
+    def action_export_leainq(self):
      
-       time.sleep(5) # Sleep for 3 seconds
+       time.sleep(3) # Sleep for 3 seconds
        self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
        self.driver.find_element_by_xpath('//a[contains(@href, "/ESS/ELeave/eLeaveApplicationInquiry.aspx")]').click()
        time.sleep(3)
