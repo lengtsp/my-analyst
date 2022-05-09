@@ -1,4 +1,5 @@
 def prepare_leaveadjust(filename):
+    import pandas as pd
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'EMPLID'}      )
     df['leave_type_k'] = 0
