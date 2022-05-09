@@ -61,10 +61,11 @@ class clssAccessWebsite():
         time.sleep(5)
 
     def action_export_movement(self):
-       driver.find_element_by_xpath('//span[contains(@class, "iconx_m_WM")]').click()
-       driver.find_element_by_xpath('//a[contains(@href, "/Routing/EHR_Movement.aspx")]').click()
-       driver.find_element_by_xpath('//div[contains(@class, "x8Hbtn")]').click()
-       driver.find_element_by_xpath('//div[contains(@class, "x8Exportbtn")]').click()
+       time.sleep(2)
+       self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_WM")]').click()
+       self.driver.find_element_by_xpath('//a[contains(@href, "/Routing/EHR_Movement.aspx")]').click()
+       self.driver.find_element_by_xpath('//div[contains(@class, "x8Hbtn")]').click()
+       self.driver.find_element_by_xpath('//div[contains(@class, "x8Exportbtn")]').click()
        time.sleep(5)
 
 
