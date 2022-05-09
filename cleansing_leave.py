@@ -68,7 +68,23 @@ class clssAccessWebsite():
        self.driver.find_element_by_xpath('//div[contains(@class, "x8Exportbtn")]').click()
        time.sleep(5)
 
+       
+    def action_export_leainq(self):
+       time.sleep(2)
+       self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_WM")]').click()
+       self.driver.find_element_by_xpath('//a[contains(@href, "/ESS/ELeave/eLeaveApplicationInquiry.aspx")]').click()
+       
+        idtext=self.driver.find_element_by_id("token-input-ctl00_ContentHolder_aceSearchEmployeeID")
+        idtext.clear()
 
+       self.driver.find_element_by_xpath('//*[@id="ctl00_ContentHolder_btnGetPop"]/a/table/tbody/tr/td[2]').click()
+        
+       time.sleep(30)
+       
+       self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]').click()
+       time.sleep(5)
+       
+       
 def prepare_leaveadjust(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
@@ -86,6 +102,14 @@ def prepare_empProfile(filename):
     return df
    
 def prepare_movement(filename):
+    df            = pd.read_excel(filename)
+    df            = df.rename(columns={df.columns[0] : 'emplid'}      )
+    df = df[ (df['emplid'].str[:1] != 'K')] 
+    df['emplid'] = df['emplid'].astype(str)
+    return df
+   
+   
+def prepare_inquiry(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
     df = df[ (df['emplid'].str[:1] != 'K')] 
