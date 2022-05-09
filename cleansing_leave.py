@@ -70,16 +70,14 @@ class clssAccessWebsite():
 
        
     def action_export_leainq(self, url2):
-#        print(1)
-#        time.sleep(3) # Sleep for 3 seconds
-#        self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
-#        print(2)
-#        self.driver.find_element_by_xpath('//a[contains(@href, "/ESS/ELeave/eLeaveApplicationInquiry.aspx")]').click()
-#        time.sleep(3)
-#        print(3)
-       
- 
-       self.driver.get(url2)
+       print(1)
+       time.sleep(3) # Sleep for 3 seconds
+       self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
+       print(2)
+       self.driver.find_element_by_xpath('//a[contains(@href, "/ESS/ELeave/eLeaveApplicationInquiry.aspx")]').click()
+       time.sleep(3)
+       print(3)
+
 
        time.sleep(2)
        idtext=self.driver.find_element_by_id("BtnEmpSetup_ctl00_ContentHolder_aceSearchEmployeeID")
@@ -95,9 +93,7 @@ class clssAccessWebsite():
   
        time.sleep(10)
 
-       
-       
-       
+
        print(7)
        self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]').click()
        time.sleep(5)
