@@ -98,9 +98,11 @@ class clssAccessWebsite():
        
 #        time.sleep(10)
 
-
        print(7)
-       self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]').click()
+       button = self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]')
+       self.driver.execute_script("arguments[0].click();", button)
+
+#        self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]').click()
        time.sleep(5)
        
        
