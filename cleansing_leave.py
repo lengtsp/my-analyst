@@ -84,7 +84,7 @@ class clssAccessWebsite():
        print(5)
        action.double_click(idtext).perform()
 
-       time.sleep(5)
+       time.sleep(20)
        print(6)
 # #        self.driver.find_element_by_id("ctl00_ContentHolder_btnGetPop").click()
 #        self.driver.find_element_by_xpath('/html/body/form/div[5]/div[2]/div[1]/table/tbody/tr[2]/td/div/div[2]/div[2]/div/div/table/tbody/tr[2]/td/table/tbody/tr/td/span[1]/a/table/tbody/tr/td[2]').click()
