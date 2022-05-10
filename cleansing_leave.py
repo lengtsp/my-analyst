@@ -53,37 +53,39 @@ class clssAccessWebsite():
 
 
         
+
         
-        
-    def action_export_empProfile(self):
+    def action_export_empProfile(self, P1, P2, P3):
         time.sleep(2)
-        self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_WM")]').click()
-        self.driver.find_element_by_xpath('//a[contains(@href, "/Routing/eEmployeeProfile.aspx")]').click()
-        # self.driver.find_element_by_xpath('//div[contains(@class, "x8Hbtn")]').click()
-        self.driver.find_element_by_xpath('//div[contains(@class, "x8Exportbtn")]').click()
+        self.driver.find_element_by_xpath(P1).click()
+        self.driver.find_element_by_xpath(P2).click()
+        self.driver.find_element_by_xpath(P3).click()
         time.sleep(5)
 
-    def action_export_movement(self):
+
+        
+    def action_export_movement(self, P1, P2, P3, P4):
        time.sleep(2)
-       self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_WM")]').click()
-       self.driver.find_element_by_xpath('//a[contains(@href, "/Routing/EHR_Movement.aspx")]').click()
-       self.driver.find_element_by_xpath('//div[contains(@class, "x8Hbtn")]').click()
-       self.driver.find_element_by_xpath('//div[contains(@class, "x8Exportbtn")]').click()
+       self.driver.find_element_by_xpath(P1).click()
+       self.driver.find_element_by_xpath(P2).click()
+       self.driver.find_element_by_xpath(P3).click()
+       self.driver.find_element_by_xpath(P4).click()
        time.sleep(5)
 
        
-    def action_export_leainq(self, url2):
+       
+
+
+    def action_export_leainq(self, url2, P1, P2, P3, P4, P5):
        print(1)
        time.sleep(3) # Sleep for 3 seconds
-       self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
+       self.driver.find_element_by_xpath(P1).click()
        print(2)
-       self.driver.find_element_by_xpath('//a[contains(@href, "/ESS/ELeave/eLeaveApplicationInquiry.aspx")]').click()
+       self.driver.find_element_by_xpath(P2).click()
        time.sleep(3)
        print(3)
-
-
        time.sleep(2)
-       idtext=self.driver.find_element_by_id("BtnEmpSetup_ctl00_ContentHolder_aceSearchEmployeeID")
+       idtext=self.driver.find_element_by_id(P3)
        print(4)
        action = ActionChains(self.driver)    
        print(5)
@@ -92,26 +94,14 @@ class clssAccessWebsite():
        time.sleep(3)
        print(6)
 
-#        self.driver.find_element_by_xpath('//*[@id="ctl00_ContentHolder_btnGetPop"]/a').click()
-# #        idtext2=self.driver.find_element_by_id('//*[@id="ctl00_ContentHolder_btnGetPop"]/a')
-# #        print(61)
-# #        action = ActionChains(self.driver)    
-# #        print(62)
-# #        action.double_click(idtext2).perform()
-       
-#        time.sleep(10)
-
-
-       button1 = self.driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Get" ]')
+       button1 = self.driver.find_element_by_xpath(P4)
        self.driver.execute_script("arguments[0].click();", button1)
   
        time.sleep(70)
   
        print(7)
-       button = self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]')
+       button = self.driver.find_element_by_xpath(P5)
        self.driver.execute_script("arguments[0].click();", button)
-
-#        self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]').click()
        time.sleep(5)
        
        
