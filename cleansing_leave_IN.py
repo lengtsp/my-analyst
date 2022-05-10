@@ -76,23 +76,26 @@ class clssAccessWebsite():
        
 
 
-    def action_export_leainq(self, url2, P1, P2, P3, P4, P5):
+    def action_export_leainq(self, url2, P1, P2, P3,P32, P4, P5):
        print(1)
        time.sleep(3) # Sleep for 3 seconds
        self.driver.find_element_by_xpath(P1).click()
-       print(2)
+
        self.driver.find_element_by_xpath(P2).click()
        time.sleep(3)
-       print(3)
-       time.sleep(2)
+
+
        idtext=self.driver.find_element_by_id(P3)
-       print(4)
        action = ActionChains(self.driver)    
-       print(5)
        action.double_click(idtext).perform()
 
        time.sleep(3)
-       print(6)
+       
+       idtext2=self.driver.find_element_by_id(P32).click()
+       
+       
+       
+       
 
        button1 = self.driver.find_element_by_xpath(P4)
        self.driver.execute_script("arguments[0].click();", button1)
