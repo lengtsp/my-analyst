@@ -26,32 +26,35 @@ class clssAccessWebsite():
 #         driver.get(self.base_url)
         driver.get(base_url)
         
-    def action_login(self, user_login, pass_login):
-        iduser=self.driver.find_element_by_id("ctl00_ContentHolder_user")
+    def action_login(self, user_login, pass_login, P1, P2, P3):
+        iduser=self.driver.find_element_by_id(P1)
         iduser.clear()
         iduser.send_keys(user_login)
 
-        idpass=self.driver.find_element_by_id("ctl00_ContentHolder_pwdbox")
+        idpass=self.driver.find_element_by_id(P2)
         idpass.clear()
         idpass.send_keys(pass_login)
 
-        id_submit=self.driver.find_element_by_class_name("LoginLink")
+        id_submit=self.driver.find_element_by_class_name(P3)
         id_submit.send_keys(Keys.RETURN)
 
-    def action_export_leaveadjustment(self):
+    def action_export_leaveadjustment(self, P1, P2, P3, P4):
         time.sleep(5) # Sleep for 3 seconds
-        self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
-        self.driver.find_element_by_xpath('//a[contains(@href, "/HRM/Leave/eLeaveBulkAdjustment.aspx")]').click()
+        self.driver.find_element_by_xpath(P1).click()
+        self.driver.find_element_by_xpath(P2).click()
 
         time.sleep(5) # Sleep for 3 seconds
-        self.driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Get" ]').click()
-        #สั่ง download file มันจะมาลง colab ให้เลย
+        self.driver.find_element_by_xpath(P3).click()
+
 
         time.sleep(2) # Sleep for 3 seconds
-        self.driver.find_element_by_xpath('//div[contains(@class, "ZG_TExportExcel")]').click()
+        self.driver.find_element_by_xpath(P4).click()
         time.sleep(5)
 
 
+        
+        
+        
     def action_export_empProfile(self):
         time.sleep(2)
         self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_WM")]').click()
