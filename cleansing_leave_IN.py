@@ -146,7 +146,7 @@ def prepare_movement(filename):
 def prepare_inquiry(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
-    df['emplid'] = df['emplid'].str.astype(str)
+    df['emplid'] = df['emplid'].astype(str)
     df = df[ (df['emplid'].str[:1] != 'K')] 
     return df
    
