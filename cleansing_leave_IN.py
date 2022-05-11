@@ -135,6 +135,7 @@ def prepare_leaveadjust(filename):
 def prepare_empProfile(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
+    df = df.fillna(0)
     df['emplid'] = df['emplid'].astype(str)
     df = df[ (df['emplid'].str[:1] != 'K')] 
     return df
@@ -142,6 +143,7 @@ def prepare_empProfile(filename):
 def prepare_movement(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
+    df = df.fillna(0)
     df['emplid'] = df['emplid'].astype(str)
     df = df[ (df['emplid'].str[:1] != 'K')] 
     return df
@@ -208,4 +210,33 @@ def convert_leavetype(ty):
     else:
         return 'N/A'
 
+     
+     
+def auto_leave_adjust(df_diff, leave_this):
+ 
+    if(len(df_diff) > 0):
    
+            for a in df_diff['emplid']:
+                self.driver.find_element_by_xpath('//span[contains(@class, "iconx_m_LV")]').click()
+                self.driver.find_element_by_xpath('//a[contains(@href, "/HRM/Leave/eLeaveBulkAdjustment.aspx")]').click()
+
+                id_search_empl=self.driver.find_element_by_id("token-input-ctl00_ContentHolder_aceSearchEmployeeID")
+                id_search_empl.clear()
+                id_search_empl.send_keys(a)
+                time.sleep(3) # Sleep for 3 seconds
+                id_search_empl.send_keys(Keys.RETURN)
+                        
+                self.driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Get" ]').click()
+                time.sleep(5) # Sleep for 3 seconds
+
+                id_adjust_box = self.driver.find_element_by_xpath("//td[contains(text(),'" + leave_this +"')]/following::div[4]")
+                action = ActionChains(self.driver)    
+                action.double_click(id_adjust_box).perform()
+
+                id_adjust_box2 = self.driver.find_element_by_xpath("//td[contains(text(),'" + leave_this +"')]/following::div[4]/input")
+                id_adjust_box2.clear()
+                id_adjust_box2.send_keys(float(df_diff[df_diff['emplid']== a]['diff balance infinitas']))
+                id_adjust_box2.send_keys(Keys.RETURN)   
+
+                self.driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Save" ]').click()
+                time.sleep(5) # Sleep for 3 seconds
