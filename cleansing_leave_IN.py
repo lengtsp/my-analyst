@@ -125,6 +125,7 @@ class clssAccessWebsite():
 def prepare_leaveadjust(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
+    df = df.fillna(0)
     df['leave_type_k'] = 0
     df['leave_type_k'] = df['Leave Type'].apply(convert_leavetype)
     df['emplid'] = df['emplid'].astype(str)
@@ -149,8 +150,10 @@ def prepare_movement(filename):
 def prepare_inquiry(filename):
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
+    df = df.fillna(0)
     df['emplid'] = df['emplid'].astype(str)
     df = df[ (df['emplid'].str[:1] != 'K')] 
+    
     return df
    
    
