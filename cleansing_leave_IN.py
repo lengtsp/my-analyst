@@ -212,7 +212,7 @@ def convert_leavetype(ty):
 
      
      
-def auto_leave_adjust(df_diff, leave_this):
+def auto_leave_adjust(self,df_diff, leave_this):
  
     if(len(df_diff) > 0):
    
