@@ -39,17 +39,17 @@ class clssAccessWebsite():
         id_submit.send_keys(Keys.RETURN)
 
     def action_export_leaveadjustment(self, P1, P2, P3, P4):
-        time.sleep(5) # Sleep for 3 seconds
+        time.sleep(15) # Sleep for 3 seconds
         self.driver.find_element_by_xpath(P1).click()
         self.driver.find_element_by_xpath(P2).click()
 
-        time.sleep(5) # Sleep for 3 seconds
+        time.sleep(15) # Sleep for 3 seconds
         self.driver.find_element_by_xpath(P3).click()
 
 
-        time.sleep(2) # Sleep for 3 seconds
+        time.sleep(12) # Sleep for 3 seconds
         self.driver.find_element_by_xpath(P4).click()
-        time.sleep(5)
+        time.sleep(15)
 
 
         
