@@ -127,6 +127,17 @@ class clssAccessWebsite():
                     self.driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Get" ]').click()
                     time.sleep(5) # Sleep for 3 seconds
 
+                    #----------------------------section of date
+                    id_adjust_box = self.driver.find_element_by_xpath("//td[contains(text(),'" + leave_this +"')]/following::div[11]")
+                    action = ActionChains(self.driver)    
+                    action.double_click(id_adjust_box).perform()
+
+                    id_adjust_box2 = self.driver.find_element_by_xpath("//td[contains(text(),'" + leave_this +"')]/following::div[11]/input")
+                    id_adjust_box2.clear()
+                    #----------------------------
+                  
+                  
+                  
                     id_adjust_box = self.driver.find_element_by_xpath("//td[contains(text(),'" + leave_this +"')]/following::div[4]")
                     action = ActionChains(self.driver)    
                     action.double_click(id_adjust_box).perform()
