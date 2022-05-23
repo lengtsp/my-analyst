@@ -65,12 +65,12 @@ class clssAccessWebsite():
 
         
     def action_export_movement(self, P1, P2, P3, P4):
-       time.sleep(2)
+       time.sleep(12)
        self.driver.find_element_by_xpath(P1).click()
        self.driver.find_element_by_xpath(P2).click()
        self.driver.find_element_by_xpath(P3).click()
        self.driver.find_element_by_xpath(P4).click()
-       time.sleep(5)
+       time.sleep(15)
 
        
        
