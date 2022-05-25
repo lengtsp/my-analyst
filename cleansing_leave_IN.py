@@ -252,3 +252,5 @@ def convert_leavetype(ty):
         return 'N/A'
 
      
+def convert_column_to_date(df, field1):
+    df[field1] = pd.to_datetime(df[field1],format='%d/%m/%Y' , errors='coerce')
