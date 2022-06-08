@@ -144,7 +144,7 @@ class clssAccessWebsite():
 
                     id_adjust_box2 = self.driver.find_element_by_xpath("//td[contains(text(),'" + leave_this +"')]/following::div[4]/input")
                     id_adjust_box2.clear()
-                    id_adjust_box2.send_keys(float(df_diff[df_diff['emplid']== a]['diff balance infinitas']))
+                    id_adjust_box2.send_keys(float(df_diff[df_diff['emplid']== a]['ผลต่าง Balance และการคำนวณใหม่จาก HRMS ไม่ตรงกัน']))
                     id_adjust_box2.send_keys(Keys.RETURN)   
 
                     self.driver.find_element_by_xpath('//td[@class="c_content" and  text() =" Save" ]').click()
