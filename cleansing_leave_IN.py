@@ -66,7 +66,16 @@ class clssAccessWebsite():
         
     def action_export_empProfileTH(self, P1, P2, P3):
         time.sleep(2)
+        
+        
+        WebElement ele = self.driver.find_element_by_xpath('//*[@id="X8TopOpt"]/div[1]/div[2]/div[1]/div/div/div')
+#         WebElement ele = driver.findElement(By.xpath("<xpath>"));
+        Actions action = new Actions(driver)
+        action.moveToElement(ele).perform()
+
+        time.sleep(2)
         self.driver.find_element_by_xpath('/html/body/form/div[4]/div/div[1]/div[1]/div[2]/div[2]/ul[1]/li[7]/span').click()
+        
         time.sleep(2)
         self.driver.find_element_by_xpath(P1).click()
         self.driver.find_element_by_xpath(P2).click()
