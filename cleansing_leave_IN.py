@@ -66,6 +66,7 @@ class clssAccessWebsite():
         
     def action_export_empProfileTH(self, P1, P2, P3):
         time.sleep(2)
+        action = ActionChains(self.driver)    
         action.move_to_element((By.XPATH, '//*[@id="X8TopOpt"]/div[1]/div[2]/div[1]/div/div/div')).perform()
 
   
