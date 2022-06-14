@@ -68,7 +68,7 @@ class clssAccessWebsite():
         time.sleep(2)
         
         
-        WebElement ele = self.driver.find_element_by_xpath('//*[@id="X8TopOpt"]/div[1]/div[2]/div[1]/div/div/div')
+        ele = self.driver.find_element_by_xpath('//*[@id="X8TopOpt"]/div[1]/div[2]/div[1]/div/div/div')
 #         WebElement ele = driver.findElement(By.xpath("<xpath>"));
         Actions action = new Actions(driver)
         action.moveToElement(ele).perform()
