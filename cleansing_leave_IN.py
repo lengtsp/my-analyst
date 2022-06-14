@@ -64,6 +64,19 @@ class clssAccessWebsite():
 
 
         
+    def action_export_empProfileTH(self, P1, P2, P3):
+        time.sleep(2)
+        self.driver.find_element_by_xpath('/html/body/form/div[4]/div/div[1]/div[1]/div[2]/div[2]/ul[1]/li[7]/span').click()
+        time.sleep(2)
+        self.driver.find_element_by_xpath(P1).click()
+        self.driver.find_element_by_xpath(P2).click()
+        self.driver.find_element_by_xpath(P3).click()
+        time.sleep(2)
+        self.driver.find_element_by_xpath('/html/body/form/div[4]/div/div[1]/div[1]/div[2]/div[2]/ul[1]/li[6]/span').click()
+        time.sleep(5)
+        
+        
+        
     def action_export_movement(self, P1, P2, P3, P4):
        time.sleep(12)
        self.driver.find_element_by_xpath(P1).click()
