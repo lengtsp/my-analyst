@@ -70,16 +70,18 @@ class clssAccessWebsite():
 #         action = ActionChains(self.driver)    
 #         action.move_to_element((By.XPATH, '//*[@id="X8TopOpt"]/div[1]/div[2]/div[1]/div/div/div')).perform()
 
-        a = ActionChains(self.driver)
-        m= self.driver.find_element_by_xpath('//*[@id="X8TopOpt"]/div[1]/div[2]/div[1]/div/div/div')
-        a.move_to_element(m).perform()  
+#         a = ActionChains(self.driver)
+#         m= self.driver.find_element_by_xpath('//*[@id="X8TopOpt"]/div[1]/div[2]/div[1]/div/div/div')
+#         a.move_to_element(m).perform()  
 
+        print(1)
+        button1 = self.driver.find_element_by_xpath('//*[@id="X8TopOpt"]/div[1]/div[2]/div[1]/div/div/div')
+        self.driver.execute_script("arguments[0].click();", button1)
   
-  
-  
+        print(2)
         time.sleep(2)
         self.driver.find_element_by_xpath('/html/body/form/div[4]/div/div[1]/div[1]/div[2]/div[2]/ul[1]/li[7]/span').click()
-        
+        print(3)
         time.sleep(2)
         self.driver.find_element_by_xpath(P1).click()
         self.driver.find_element_by_xpath(P2).click()
