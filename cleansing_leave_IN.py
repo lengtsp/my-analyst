@@ -1,5 +1,6 @@
 import pandas as pd
 import time
+import os
 
 import sys
 sys.path.insert(0, '/usr/lib/chromium-browser/chromedriver')
@@ -195,7 +196,9 @@ def prepare_leaveadjust(filename):
     df = df[ (df['emplid'].str[:1] != 'K')] 
     return df
 
-def prepare_empProfile(filename):
+def prepare_empProfile(getfile, my_lag):
+    filename = my_lag + "_" + getfile
+    os.rename(getfile, filename)'
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
     df = df.fillna(0)
