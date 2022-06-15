@@ -198,7 +198,7 @@ def prepare_leaveadjust(filename):
 
 def prepare_empProfile(getfile, my_lag):
     filename = my_lag + "_" + getfile
-    os.rename(getfile, filename)'
+    os.rename(getfile, filename)
     df            = pd.read_excel(filename)
     df            = df.rename(columns={df.columns[0] : 'emplid'}      )
     df = df.fillna(0)
